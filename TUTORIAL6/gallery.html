@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Gallery</title>
+    <style>
+        /* CSS for styling thumbnails */
+        .thumbnail {
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .thumbnail:hover {
+            opacity: 0.7;
+        }
+
+        /* CSS for larger image container */
+        #largeImage {
+            display: none;
+            max-width: 400px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Image Gallery</h2>
+
+    <div>
+        <img class="thumbnail" src="thumbnail1.jpg" onclick="showImage('fullImage1.jpg')" alt="Image 1">
+        <img class="thumbnail" src="thumbnail2.jpg" onclick="showImage('fullImage2.jpg')" alt="Image 2">
+        <img class="thumbnail" src="thumbnail3.jpg" onclick="showImage('fullImage3.jpg')" alt="Image 3">
+    </div>
+
+    <div id="largeImage">
+        <img id="fullImage" src="" style="width: 100%;" alt="Full Image">
+    </div>
+
+    <script>
+        function showImage(imageSource) {
+            const largeImage = document.getElementById('fullImage');
+            const largeImageContainer = document.getElementById('largeImage');
+            
+            largeImage.src = imageSource;
+            largeImageContainer.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
